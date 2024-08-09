@@ -7,11 +7,12 @@ const savedSearchList = document.getElementById('saved-search-list');
 // Sample data for suggestions
 const sampleSuggestions = [
     { text: 'indus valley civilisation', url: 'posts/Indus valley civilization/indus_valley_civilisation.html' },
-    { text: 'isro( bulletpoints)', url: 'posts/Isro/Isro(bulletpoint).html' },
+    { text: 'isro', url: 'posts/Isro/Isro.html' },
      { text: 'esports', url: 'posts/esports/esports.html' },
+    
 ];
 
-// Load saved searches from local storage
+
 document.addEventListener('DOMContentLoaded', () => {
     const savedSearches = JSON.parse(localStorage.getItem('savedSearches')) || [];
     
@@ -27,13 +28,12 @@ searchInput.addEventListener('input', () => {
         );
 
         filteredSuggestions.forEach(suggestion => {
-            // Create an a element for each suggestion
             const suggestionElement = document.createElement('a');
             suggestionElement.classList.add('suggestion-item');
             suggestionElement.textContent = suggestion.text;
             suggestionElement.href = suggestion.url;
 
-            // Add click event listener to suggestion items
+            
             suggestionElement.addEventListener('click', (event) => {
                 
         function displayFoundResults(documents) {
@@ -53,7 +53,7 @@ searchInput.addEventListener('input', () => {
                 saveSearch(suggestion);
             });
 
-            // Append the suggestion element to the suggestions container
+            
             suggestionsContainer.appendChild(suggestionElement);
         });
 
@@ -71,7 +71,7 @@ document.addEventListener('click', (event) => {
 
 function saveSearch(search) {
     let savedSearches = JSON.parse(localStorage.getItem('savedSearches')) || [];
-    savedSearches = savedSearches.filter(s => s.text !== search.text); // Remove duplicates
+    savedSearches = savedSearches.filter(s => s.text !== search.text); 
     savedSearches.push(search);
     localStorage.setItem('savedSearches', JSON.stringify(savedSearches));
     
