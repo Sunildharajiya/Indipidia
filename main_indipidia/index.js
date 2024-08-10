@@ -9,7 +9,7 @@ const sampleSuggestions = [
     { text: 'indus valley civilisation', url: 'posts/Indus valley civilization/indus_valley_civilisation.html' },
     { text: 'isro', url: 'posts/Isro/Isro.html' },
      { text: 'esports', url: 'posts/esports/esports.html' },
-    
+    { text: 'india gate', url: 'posts/indiagate/indiagate.html' },
 ];
 
 
